@@ -1,0 +1,77 @@
+/* body {
+    height: 600px;
+ } */
+ 
+ .form1 {
+    background-color: rgb(110, 42, 42);
+    height: 600px;
+ }
+ 
+ .button1 {
+    margin-bottom: 10px;
+ }
+ 
+ .card {
+    margin: 2em;
+ }
+
+ .votes {
+    font-size: 0.5em;
+ }
+ 
+ /* .headings {
+    width:100% !important;
+ } */
+ 
+ .text-muted {
+    font-size: 0.75em;
+ }
+ 
+ .restodetails {
+    padding-left: 1em;
+ }
+ 
+ .cardsubtitle {
+    font-size: 0.6em;
+ }
+ 
+ .card-img {
+    height:140px;
+ }
+ 
+ .card-title {
+    color: rgb(218, 95, 95);
+    font-weight: bold;
+ }
+ 
+ .searchInputContainer {
+    width: 400px;
+ text-align: center;
+ }
+ 
+ .searchArea {
+    /* width: 960px; */
+    height:  200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+    url('https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') no-repeat;
+    background-size: cover; 
+    background-attachment: inherit;
+
+ }
+
+ a {
+   color: rgb(238, 80, 80);
+   text-decoration: none;   
+}
+ 
+ .searchInputContainer.searchInput{
+    width: 100%;
+    border: 1px solid black;
+ }
+
+ .Detailsbutton{
+    color: white !important;
+ }

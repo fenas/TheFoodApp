@@ -1,0 +1,53 @@
+
+.container-fluid {
+    height: 91.2vh;
+    background: url("https://images.pexels.com/photos/1056563/pexels-photo-1056563.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat;
+    background-size: cover; 
+    background-attachment: inherit;
+}
+
+.titleTextContainer {
+    width: 500px;
+    height: 150px;
+    background-color: rgb(245, 41, 85);
+    /* background: url('https://images.pexels.com/photos/960137/pexels-photo-960137.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500') repeat; */
+    -webkit-box-shadow: 10px 29px 43px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 29px 43px -4px rgba(0,0,0,0.75);
+box-shadow: 10px 29px 43px -4px rgba(0,0,0,0.75);
+border-radius: 20px 20px 20px 20px;
+-moz-border-radius: 20px 20px 20px 20px;
+-webkit-border-radius: 20px 20px 20px 20px;
+border: 0px solid #000000;
+opacity: 1;
+background-size: cover; 
+    background-attachment: inherit;
+}
+
+.titleText {
+    color: white;
+}
+
+
+.Or {
+    color: white;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    
+}
+
+
+input.ng-invalid.ng-touched {
+    border: 1px solid rgb(231, 148, 148);
+    
+}
+
+.mainform {
+
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+
+}

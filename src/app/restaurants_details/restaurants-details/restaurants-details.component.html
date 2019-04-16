@@ -1,0 +1,184 @@
+<div class="mainContainer d-flex flex-column flex-md-row">
+
+
+  <div class="col-lg-8 Restodetails">
+
+    <div class="card d-flex justify-content-center">
+      <img [src]="restoDetails?.featured_image" class="card-img-top mainImg" alt="Image preview not available!">
+      <div class="card-body d-flex flex-row justify-content-between">
+        <div>
+          <h3 class="card-title">{{restoDetails?.name}}</h3>
+          <h6>{{restoDetails?.location.locality_verbose}}</h6>
+
+          <p class="card-text text-muted">{{restoDetails?.location.address}}</p>
+        </div>
+
+        <h2 class="d-flex flex-column">
+          <span class="badge badge-success">{{restoDetails?.user_rating.aggregate_rating}}/5</span>
+          <small class="votes text-muted">{{restoDetails?.user_rating.votes}} votes</small>
+        </h2>
+      </div>
+
+      <div class="px-5 py-2">
+        <div class="row no-gutters restodetails mt-3">
+          <span class="text-muted col-5 justify-content-start">CUSINE: </span>
+          <span class="text-muted col-7 justify-content-start">{{restoDetails?.cuisines}}</span>
+        </div>
+
+        <div class="row no-gutters restodetails">
+          <span class="text-muted col-5  d-flex justify-content-start">COST FOR TWO:</span>
+          <span class="text-muted col-7  d-flex justify-content-start">{{restoDetails?.average_cost_for_two}}
+            {{restoDetails?.currency}} - Cash and Cards accepted</span>
+        </div>
+
+        <div class="row no-gutters restodetails">
+          <span class="text-muted col-5  d-flex justify-content-start">OPENING HOURS:</span>
+          <span class="text-muted col-7  d-flex justify-content-start">Today 11am – 11pm</span>
+        </div>
+
+        <div class="row no-gutters restodetails">
+          <span class="text-muted col-5  d-flex justify-content-start">PHONE NUMBERS:</span>
+          <span class="text-muted col-7  d-flex justify-content-start">9988776655 , 9876543210</span>
+        </div>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <ul class="d-flex flex-row justify-content-around list-group list-group-horizontal-sm">
+            <li class="list-group-item">
+              <button class="btn btn-danger">
+                <a [href]="[restoDetails?.menu_url]">View Menu</a>
+
+              </button>
+            </li>
+            <li class="list-group-item">
+              <button class="btn btn-success">
+                <a [href]="[restoDetails?.photos_url]">View Photos</a>
+
+
+              </button>
+            </li>
+            <li class="list-group-item">
+              <button class="btn btn-danger">
+                <a [href]="[restoDetails?.book_url]">Order Now</a>
+              </button>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+
+      <!-- 
+      <ul class="nav nav-pills  nav-justified d-flex flex-row justify-content-around" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+            aria-selected="true">Overview</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="profile-tab" data-toggle="tab" href="" role="tab" aria-controls="profile"
+            aria-selected="false">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="messages-tab" data-toggle="tab" href="" role="tab" aria-controls="messages"
+            aria-selected="false">Reviews</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="settings-tab" data-toggle="tab" role="tab" aria-controls="settings"
+            aria-selected="false">Photos</a>
+        </li>
+      </ul>
+
+      <div class="tab-content d-flex flex-row justify-content-around p-3">
+        <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque excepturi perferendis,
+            nostrum aspernatur pariatur ad? At tenetur iusto, commodi, nostrum, id sed blanditiis
+            doloribus nobis ducimus ea nam consequatur debitis.
+          </p>
+        </div>
+        <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
+        <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">3</div>
+        <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">4</div>
+      </div> -->
+
+
+    </div>
+
+  </div>
+
+
+
+
+  <div class="col-lg-4 Suggestions">
+    <!-- fxHide.lt-md="true" fxShow -->
+
+
+    <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]='lat' [longitude]='lng'>
+      </agm-marker>
+    </agm-map>
+    <!-- sponsor and poppular code 
+
+  
+      <div class="card m-2" style="width: 11rem;">
+        <img
+          src="https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          class="card-img-top thumbnailImg" alt="...">
+        <span class="badge badge-success thumbRating">4.3/5</span>
+        <div class="card-body p-2">
+
+
+          <h5 class="card-title m-0 thumbTitile">Myu Bar at Gilly's Redefined</h5>
+          <p class="card-text thumbTitile text-muted">GILLY'S REDEFINED, KORAMANGALA 4TH...Club nights
+            with
+            great food and economical drinks!</p>
+        </div>
+      </div>
+
+
+
+
+      <div class="card m-2" style="width: 10rem;">
+        <img
+          src="https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          class="card-img-top thumbnailImg" alt="...">
+        <div class="card-body p-2">
+          <h5 class="card-title m-0 thumbTitile">Myu Bar at Gilly's Redefined</h5>
+          <p class="card-text thumbTitile text-muted">GILLY'S REDEFINED, KORAMANGALA 4TH...Club nights
+            with
+            great food and economical drinks!</p>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="card m-2" style="width: 10rem;">
+        <img
+          src="https://images.pexels.com/photos/675951/pexels-photo-675951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          class="card-img-top thumbnailImg" alt="...">
+        <div class="card-body p-2">
+          <h5 class="card-title m-0 thumbTitile">Myu Bar at Gilly's Redefined</h5>
+          <p class="card-text thumbTitile text-muted">GILLY'S REDEFINED, KORAMANGALA 4TH...Club nights
+            with
+            great food and economical drinks!</p>
+        </div>
+      </div>
+    </div> -->
+    <!-- suggestions code end -->
+
+  </div>
+
+
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

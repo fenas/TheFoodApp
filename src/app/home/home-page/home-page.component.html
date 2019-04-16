@@ -1,0 +1,52 @@
+<div class="container-fluid d-flex flex-column justify-content-between  align-items-center">
+
+  <div class="mt-5 titleTextContainer">
+    <h1 class="display-4 px-3 pt-1 titleText">Hungry?
+    </h1>
+    <h1 class="display-4 titleText px-3 pb-1">
+      Order Food Online!
+    </h1>
+    <h5 class="display-6 px-2 pb-2 titleText">
+      From the best restaurents near you!
+    </h5>
+  </div>
+
+  <form class="d-flex flex-md-row flex-column mainform" #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+    <div class="form-group pr-3 mb-3 col-md-7">
+      <input type="text" class="form-control cityinput" id="city" placeholder="Enter your city" ngModel name="city"
+        required #city="ngModel">
+      <small *ngIf="hintOn" class="hint1 text-muted d-flex justify-content-start p-1 pl-2 m-0">Please enter a valid
+        city</small>
+    </div>
+
+
+    <!-- <div class="form-group pr-3 mb-3 col-md-5">
+      <input type="text" class="form-control locationinput" id="location" placeholder="your delivery location" ngModel
+        name="location" required>
+    </div> -->
+
+    <div class="mb-3">
+      <button type="submit" class="btn btn-danger" [disabled]="!f.valid">
+        <div>
+          Search
+        </div>
+      </button>
+    </div>
+
+  </form>
+
+  <h5 *ngIf="!isLoading" class="Or">Or</h5>
+  <div *ngIf="isLoading" class="spinner-border text-danger" role="status">
+  </div>
+
+  <div>
+    <button class="btn btn-danger mb-5">
+      <a (click)="detectLocation()">Detect my location</a>
+    </button>
+
+    <p *ngIf="Geofeedback" class="alert alert-danger">{{Geofeedback}}</p>
+  </div>
+
+
+</div>

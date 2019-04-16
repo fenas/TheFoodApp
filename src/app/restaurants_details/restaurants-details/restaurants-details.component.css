@@ -1,0 +1,62 @@
+
+.mainContainer {
+    height: 100%;
+    padding: 2em;
+}
+
+.Restodetails {
+    /* background-color: aquamarine; */
+    height: 100%;
+}
+
+.Suggestions {
+    /* background-color: blueviolet; */
+    height: 100%;
+}
+
+.votes {
+font-size: 0.5em;
+text-align: center;
+}
+
+.mainImg {
+    height: 299px;
+    width: 100%;
+}
+
+.thumbnailImg {
+    position: relative;
+    border-radius: 5px;
+}
+
+.thumbRating {
+position: absolute;
+top: 98px;;
+left: 1px;
+
+}
+
+.thumbTitile {
+    font-size: 0.75em;
+}
+
+.sponsoredHeading {
+    color: rgba(105, 83, 8, 0.452);
+    font-weight: bold;
+    font-size: 0.75em;
+    margin: 8px;
+}
+
+agm-map {
+    height: 300px;
+  }
+
+  .card-title {
+      color: rgb(236, 79, 79);
+      font-weight: bold;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;   
+ }
