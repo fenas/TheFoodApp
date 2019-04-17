@@ -27,33 +27,33 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
     this.spinnerSubscription = this.uiService.spinnerState.subscribe(isLoading => {
       this.isLoading = isLoading;
-    });  // subscription to get the changed states of the spinner on the homepage search button
+    });  // subscription to get the changed states of the spinner on the homepage
+
     this.hintSubscription = this.uiService.hintState.subscribe(hintOn => {
       this.hintOn = hintOn;
-    }
-    );
+    }); // subscription to activate hints on the hope page below input field
   }
 
 
 
-  onSubmit(form: NgForm) {
+  onSubmit(form: NgForm) { // function to get the form inputs
     console.log(form);
     console.log(form.value.city);
     console.log(form.value.location);
     const city = form.value.city;
     // const location = form.value.location;
-    this.isLoading = true;
-    this.httpService.getLocationIdFromCity(city);
+    this.isLoading = true; // start spinner
+    this.httpService.getLocationIdFromCity(city); // passing location to http service
 
   }
 
-  detectLocation() {
+  detectLocation() { // function to detect user location
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         this.showPosition(position);
       });
     } else {
-      alert('Geolocation is not supported by this browser.');
+      alert('Geolocation is not supported by this browser.'); // error message is geolocation is not supported
     }
     console.log('detect');
   }
@@ -65,13 +65,13 @@ export class HomePageComponent implements OnInit, OnDestroy {
     console.log(`lattitude ${this.lat}
   longitude ${this.long}`);
 
-    this.httpService.getLocationIdfromCoordinates(this.lat, this.long);
+    this.httpService.getLocationIdfromCoordinates(this.lat, this.long); // passing user coordinates to http service
 
   }
 
   ngOnDestroy() {
-    this.spinnerSubscription.unsubscribe();
-    this.hintSubscription.unsubscribe();
+    this.spinnerSubscription.unsubscribe(); // unsubscribe spinner on component destroy
+    this.hintSubscription.unsubscribe();  // unsubscribe hints on component destroy
 
   }
 

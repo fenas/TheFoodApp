@@ -17,37 +17,27 @@ export class RestaurantsDetailsComponent implements OnInit {
   constructor(private httpService: MainHttpService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    const restoId = this.route.snapshot.paramMap.get('id');
+    const restoId = this.route.snapshot.paramMap.get('id'); // getting restaurant id from route
     console.log(restoId);
 
-    this.httpService.getRestoDetailsById(restoId).subscribe(
+    this.httpService.getRestoDetailsById(restoId).subscribe( // getting restaurant details from id
       result => {
         console.log(result);
-        this.restoDetails = result;
-        // this.lat = this.restoDetails.location.latitude;
-        // this.lng = this.restoDetails.location.longitude;
+        this.restoDetails = result; // storing restaurant details to local object
+        // function to mark location on google map
         this.googleMap(this.restoDetails.location.latitude, this.restoDetails.location.longitude);
-
-        // console.log(`${this.lat} ${this.lng}`);
       },
       error => {
         console.log(error);
+        alert(error);
       }
     );
 
   }
 
   googleMap(lat, lng) {
-    this.lat = parseFloat(lat);
-    this.lng = parseFloat(lng);
+    this.lat = parseFloat(lat); // converting latitude from string to float and assigning to locat variable
+    this.lng = parseFloat(lng); // converting longitude from string to float and assigning to locat variable
   }
-  // myMap() {
-
-  //   let mapProp = {
-  //     center: new google.maps.LatLng(51.508742, -0.120850),
-  //     zoom: 5,
-  //   };
-  //   var map = new google.maps.Map(document.getElementById('googleMap'), mapProp);
-  // }
 
 }

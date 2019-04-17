@@ -1,5 +1,5 @@
 <div class="container-fluid d-flex flex-column justify-content-between  align-items-center">
-
+  <!-- jumbotron start -->
   <div class="mt-5 titleTextContainer">
     <h1 class="display-4 px-3 pt-1 titleText">Hungry?
     </h1>
@@ -10,6 +10,9 @@
       From the best restaurents near you!
     </h5>
   </div>
+  <!-- jumbotron end -->
+
+  <!-- form start -->
 
   <form class="d-flex flex-md-row flex-column mainform" #f="ngForm" (ngSubmit)="onSubmit(f)">
 
@@ -20,11 +23,6 @@
         city</small>
     </div>
 
-
-    <!-- <div class="form-group pr-3 mb-3 col-md-5">
-      <input type="text" class="form-control locationinput" id="location" placeholder="your delivery location" ngModel
-        name="location" required>
-    </div> -->
 
     <div class="mb-3">
       <button type="submit" class="btn btn-danger" [disabled]="!f.valid">
@@ -48,5 +46,6 @@
     <p *ngIf="Geofeedback" class="alert alert-danger">{{Geofeedback}}</p>
   </div>
 
+  <!-- form end -->
 
 </div>

@@ -1,9 +1,6 @@
+<!-- search area start -->
 <div class="searchArea p-0 mx-0">
   <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center">
-    <!-- <div class="form-group col-md-4 px-1 m-0 d-flex justify-content-center">
-      <input type="text" class="form-control form-control-sm mb-2 col-8 col-sm-12 searchInput"
-        placeholder="Search locality." [(ngModel)]='city'>
-    </div> -->
     <div class="form-group m-0 searchInputContainer d-flex justify-content-center">
       <input type="text" class="form-control form-control-sm mb-2 col-8 col-sm-12 searchInput"
         placeholder="Search Restaurants by Location." [(ngModel)]='name'>
@@ -11,6 +8,10 @@
     <button (click)="searchResto()" class="btn btn-danger btn-sm ml-2 mb-2">Search</button>
   </div>
 </div>
+
+<!-- search section end -->
+
+<!-- card section start -->
 
 <div class="d-flex flex-row flex-wrap container">
 
@@ -42,27 +43,8 @@
           <p class="card-text text-muted">{{resto.restaurant.location.address}}</p>
         </div>
       </div>
-      <!-- <div class="col-md-2 d-flex flex-column justify-content-start align-items-end">
-        <span class="badge badge-secondary">{{resto.restaurant.user_rating.aggregate_rating}}</span>
-        <span class="text-muted">{{resto.restaurant.user_rating.votes}} votes</span>
-      </div> -->
 
     </div>
-
-    <!-- <div class="row no-gutters restodetails mt-3">
-      <span class="text-muted col-5">CUSINE: </span>
-      <span class="text-muted col-7">{{resto.restaurant.cuisines}}</span>
-    </div>
-
-     <div class="row no-gutters restodetails">
-      <span class="text-muted col-5">HOURS:</span>
-      <span class="text-muted col-7">somthing somthing</span>
-    </div> -->
-
-    <!-- <div class="row no-gutters restodetails">
-      <span class="text-muted col-5">COST FOR TWO:</span>
-      <span class="text-muted col-7">{{resto.restaurant.average_cost_for_two}} {{resto.restaurant.currency}}</span>
-    </div> -->
 
     <div class="row no-gutters restodetails mt-3">
       <span class="text-muted col-5">FEATURED IN:</span>
@@ -70,20 +52,15 @@
     </div>
 
     <div class="row no-gutters m-1 d-flex justify-content-start pt-3">
-      <!-- <button type="button" class="col-3 btn btn-sm btn-outline-primary"><a href="">
-          call now
-        </a>
 
-      </button> -->
+
       <button type="button" class="col-3 btn btn-sm btn-success mr-3 "> <a
           [routerLink]="['/details',resto.restaurant.id]" class="Detailsbutton">
           View Details </a>
       </button>
-      <!-- <button type="button" class="col-3 btn btn-sm btn-outline-success">
-        <a [href]="[resto.restaurant.book_url]">
-          Order Now
-        </a>
-      </button> -->
+
     </div>
 
   </div>
+
+  <!-- card section end -->

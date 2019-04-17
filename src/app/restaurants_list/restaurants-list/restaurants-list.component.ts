@@ -16,27 +16,24 @@ export class RestaurantsListComponent implements OnInit {
 
   ngOnInit() {
 
-    const locationId = this.route.snapshot.paramMap.get('location');
+    const locationId = this.route.snapshot.paramMap.get('location'); // get the locationId from route
     console.log(locationId);
 
 
-    this.httpService.getAllRestaurents(locationId).subscribe(result => {
+    this.httpService.getAllRestaurents(locationId).subscribe(result => { // getting restaurant list from location id
       console.log(result['restaurants']);
-      this.restaurants = result['restaurants'];
+      this.restaurants = result['restaurants']; // storing the restaurant list to local array
       console.log(this.restaurants);
-    });
+    }, error => {
+      console.log(error);
+      alert(error);
+    }
+    );
 
   }
 
-  searchResto() {
-    this.httpService.getLocationIdFromCity(this.name);
-
-    // this.httpService.getRestoDetailByName(this.name).subscribe(result => {
-    //   console.log(result['restaurants']);
-    //   this.restaurants = result['restaurants'];
-    //   console.log(this.restaurants);
-    // });
-
+  searchResto() { // triggers when user again searches for a city
+    this.httpService.getLocationIdFromCity(this.name); // gets location id from city name and passes to route
   }
 }
 
