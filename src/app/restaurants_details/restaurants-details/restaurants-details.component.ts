@@ -1,6 +1,6 @@
 import { MainHttpService } from './../../main-http.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class RestaurantsDetailsComponent implements OnInit {
   lng: number = 0;
 
 
-  constructor(private httpService: MainHttpService, private route: ActivatedRoute) { }
+  constructor(private httpService: MainHttpService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     const restoId = this.route.snapshot.paramMap.get('id'); // getting restaurant id from route
@@ -29,7 +29,7 @@ export class RestaurantsDetailsComponent implements OnInit {
       },
       error => {
         console.log(error);
-        alert(error);
+        this.router.navigate(['/error']);
       }
     );
 

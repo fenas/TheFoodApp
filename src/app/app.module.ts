@@ -11,13 +11,15 @@ import { HomePageComponent } from './home/home-page/home-page.component';
 import { RestaurantsListComponent } from './restaurants_list/restaurants-list/restaurants-list.component';
 import { RestaurantsDetailsComponent } from './restaurants_details/restaurants-details/restaurants-details.component';
 import { AgmCoreModule } from '@agm/core';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     RestaurantsListComponent,
-    RestaurantsDetailsComponent
+    RestaurantsDetailsComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,18 +1,23 @@
-import { ActivatedRoute } from '@angular/router';
+import { UIService } from 'src/app/ui.service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MainHttpService } from './../../main-http.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-restaurants-list',
   templateUrl: './restaurants-list.component.html',
   styleUrls: ['./restaurants-list.component.css']
 })
-export class RestaurantsListComponent implements OnInit {
+export class RestaurantsListComponent implements OnInit, OnDestroy {
   restaurants = [];
   name = '';
+  hintOn = false;
+  hintSubscription: Subscription;
 
 
-  constructor(private httpService: MainHttpService, private route: ActivatedRoute) { }
+  constructor(private httpService: MainHttpService, private route: ActivatedRoute, private router: Router,
+    private uiService: UIService) { }
 
   ngOnInit() {
 
@@ -26,14 +31,22 @@ export class RestaurantsListComponent implements OnInit {
       console.log(this.restaurants);
     }, error => {
       console.log(error);
-      alert(error);
+      this.router.navigate(['/error']);
     }
     );
+
+    this.hintSubscription = this.uiService.hintState.subscribe(hintOn => {
+      this.hintOn = hintOn;
+    }); // subscription to activate hints on the hope page below input field
 
   }
 
   searchResto() { // triggers when user again searches for a city
     this.httpService.getLocationIdFromCity(this.name); // gets location id from city name and passes to route
+  }
+
+  ngOnDestroy() {
+    this.hintSubscription.unsubscribe();  // unsubscribe hints on component destroy
   }
 }
 

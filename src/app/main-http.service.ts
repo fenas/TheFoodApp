@@ -37,7 +37,6 @@ export class MainHttpService {
         if (locationdetails.length === 0) {  // if location response obtained is an empty array
           this.Uiservice.hintState.next(true); // turn on hint/alert
           console.log('error');
-          alert('error fetching details');
 
         } else {
           this.Uiservice.hintState.next(false); // turn off hint/alert
@@ -50,6 +49,7 @@ export class MainHttpService {
       },
       error => {
         console.log(error);
+        this.router.navigate(['/error']);
       }
     );
 
@@ -71,7 +71,7 @@ export class MainHttpService {
       },
       error => {
         console.log(error);
-        alert(error);
+        this.router.navigate(['/error']);
       }
     );
   }
@@ -79,7 +79,7 @@ export class MainHttpService {
   getAllRestaurents(locationId) {
     console.log(locationId);
     // http get request for restaurant list
-    return this.http.get(`https://developers.zomato.com/api/v2.1/search?entity_id=${locationId}&count=10&sort=rating`, this.httpHeader);
+    return this.http.get(`https://developers.zomato.com/api/v2.1/search?entity_id=${locationId}&count=20&sort=rating`, this.httpHeader);
 
   }
 

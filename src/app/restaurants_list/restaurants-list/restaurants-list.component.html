@@ -1,9 +1,11 @@
 <!-- search area start -->
 <div class="searchArea p-0 mx-0">
-  <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center">
-    <div class="form-group m-0 searchInputContainer d-flex justify-content-center">
-      <input type="text" class="form-control form-control-sm mb-2 col-8 col-sm-12 searchInput"
+  <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center align-items-sm-start">
+    <div class="form-group m-0 searchInputContainer d-flex flex-column justify-content-center align-items-center">
+      <input type="text" class="form-control form-control-sm col-8 col-sm-12 searchInput"
         placeholder="Search Restaurants by Location." [(ngModel)]='name'>
+      <small *ngIf="hintOn" class="hint1 text-muted d-flex justify-content-start p-1 pl-2 m-0">Please enter a valid
+        city</small>
     </div>
     <button (click)="searchResto()" class="btn btn-danger btn-sm ml-2 mb-2">Search</button>
   </div>
