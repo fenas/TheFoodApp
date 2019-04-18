@@ -1,10 +1,10 @@
 <div class="container-fluid d-flex flex-column justify-content-start align-items-center">
   <!-- jumbotron start -->
 
-  <div class="jumbotron titleTextContainer m-2 p-3">
+  <div class="jumbotron titleTextContainer m-3 p-3">
     <h1 class="display-4">Hungry?</h1>
-    <h3 class="display-4">order food online!!!</h3>
-    <p class="">from the best restaurants near you!</p>
+    <h3 class="display-4">order food online!</h3>
+    <p class="lead">from the best restaurants near you!</p>
   </div>
   <!-- jumbotron end -->
 
@@ -12,7 +12,7 @@
 
   <form class="d-flex flex-md-row flex-column mainform" #f="ngForm" (ngSubmit)="onSubmit(f)">
 
-    <div class="form-group pr-3 mb-1 col-md-7">
+    <div class="form-group pr-3 my-1 col-md-7">
       <input type="text" class="form-control cityinput" id="city" placeholder="Enter your city" ngModel name="city"
         required #city="ngModel">
       <small *ngIf="hintOn" class="hint1 text-muted d-flex justify-content-start p-1 pl-2 m-0">Please enter a valid
@@ -31,11 +31,11 @@
   </form>
 
   <h5 *ngIf="!isLoading" class="Or">Or</h5>
-  <div *ngIf="isLoading" class="spinner-border text-danger" role="status">
+  <div *ngIf="isLoading" class="spinner-border text-light" role="status">
   </div>
 
   <div>
-    <button class="btn btn-danger mb-5">
+    <button class="btn btn-danger mb-5 mt-2">
       <a (click)="detectLocation()">Detect my location</a>
     </button>
 

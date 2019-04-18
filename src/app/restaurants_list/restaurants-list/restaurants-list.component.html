@@ -7,7 +7,10 @@
       <small *ngIf="hintOn" class="hint1 text-muted d-flex justify-content-start p-1 pl-2 m-0">Please enter a valid
         city</small>
     </div>
-    <button (click)="searchResto()" class="btn btn-danger btn-sm ml-2 mb-2">Search</button>
+    <button (click)="searchResto()" class="btn btn-danger btn-sm ml-2 mb-2">
+      Search
+      <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    </button>
   </div>
 </div>
 
@@ -15,9 +18,9 @@
 
 <!-- card section start -->
 
-<div class="d-flex flex-row flex-wrap container">
+<div class="d-flex flex-row flex-wrap container justify-content-center">
 
-  <div class="card d-flex justify-content-around p-3" style="max-width: 450px;" *ngFor="let resto of restaurants">
+  <div class="card d-flex justify-content-around" style="max-width: 400px;" *ngFor="let resto of restaurants">
     <div class="row no-gutters">
 
       <div class="col-md-4">

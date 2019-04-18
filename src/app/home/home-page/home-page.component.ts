@@ -53,7 +53,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
         this.showPosition(position);
       });
     } else {
-      alert('Geolocation is not supported by this browser.'); // error message is geolocation is not supported
+      alert('Geolocation is not supported by this browser.'); // error message if geolocation is not supported
     }
     console.log('detect');
   }

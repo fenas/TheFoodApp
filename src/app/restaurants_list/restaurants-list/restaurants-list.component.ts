@@ -13,6 +13,8 @@ export class RestaurantsListComponent implements OnInit, OnDestroy {
   restaurants = [];
   name = '';
   hintOn = false;
+  isLoading = false;
+  spinnerSubscription: Subscription;
   hintSubscription: Subscription;
 
 
@@ -39,6 +41,10 @@ export class RestaurantsListComponent implements OnInit, OnDestroy {
       this.hintOn = hintOn;
     }); // subscription to activate hints on the hope page below input field
 
+    this.spinnerSubscription = this.uiService.spinnerState.subscribe(isLoading => {
+      this.isLoading = isLoading;
+    });  // subscription to get the changed states of the spinner on the homepage
+
   }
 
   searchResto() { // triggers when user again searches for a city
@@ -47,6 +53,8 @@ export class RestaurantsListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.hintSubscription.unsubscribe();  // unsubscribe hints on component destroy
+    this.spinnerSubscription.unsubscribe(); // unsubscribe spinner on component destroy
+
   }
 }
 

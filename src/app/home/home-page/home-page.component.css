@@ -1,16 +1,13 @@
 
 .container-fluid {
     height: 91vh;
-    background: url("https://images.pexels.com/photos/1056563/pexels-photo-1056563.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") no-repeat;
-    /* background-size: contain; 
-    background-attachment: inherit; */
-    
+    background: url("https://images.pexels.com/photos/1631899/pexels-photo-1631899.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500") no-repeat;
+   background-size: cover; 
 }
 
 .titleTextContainer {
-    color: black;
-    /* background-color: black; */
-    /* background: url('https://images.pexels.com/photos/960137/pexels-photo-960137.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500') repeat; */
+    color: white;
+    background: url('https://images.pexels.com/photos/326279/pexels-photo-326279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') no-repeat;
     -webkit-box-shadow: 10px 29px 43px -4px rgba(0,0,0,0.75);
 -moz-box-shadow: 10px 29px 43px -4px rgba(0,0,0,0.75);
 box-shadow: 10px 29px 43px -4px rgba(0,0,0,0.75);
@@ -20,15 +17,7 @@ border-radius: 20px 20px 20px 20px;
 border: 0px solid #000000;
 opacity: 1;
 background-size: cover; 
-    background-attachment: inherit;
-    background: rgba(242,246,248,1);
-    background: -moz-linear-gradient(left, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 12%, rgba(181,198,208,1) 53%, rgba(224,239,249,1) 89%, rgba(224,239,249,1) 100%);
-    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(242,246,248,1)), color-stop(12%, rgba(216,225,231,1)), color-stop(53%, rgba(181,198,208,1)), color-stop(89%, rgba(224,239,249,1)), color-stop(100%, rgba(224,239,249,1)));
-    background: -webkit-linear-gradient(left, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 12%, rgba(181,198,208,1) 53%, rgba(224,239,249,1) 89%, rgba(224,239,249,1) 100%);
-    background: -o-linear-gradient(left, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 12%, rgba(181,198,208,1) 53%, rgba(224,239,249,1) 89%, rgba(224,239,249,1) 100%);
-    background: -ms-linear-gradient(left, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 12%, rgba(181,198,208,1) 53%, rgba(224,239,249,1) 89%, rgba(224,239,249,1) 100%);
-    background: linear-gradient(to right, rgba(242,246,248,1) 0%, rgba(216,225,231,1) 12%, rgba(181,198,208,1) 53%, rgba(224,239,249,1) 89%, rgba(224,239,249,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=1 );
+
 }
 
 
