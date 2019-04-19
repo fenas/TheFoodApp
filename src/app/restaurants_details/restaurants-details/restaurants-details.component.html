@@ -21,30 +21,31 @@
 
       <div class="px-5 py-2">
         <div class="row no-gutters restodetails mt-3">
-          <span class="text-muted col-5 justify-content-start">CUISINE:</span>
-          <span class="text-muted col-7 justify-content-start">{{restoDetails?.cuisines}}</span>
+          <span class="text-muted col-5 d-flex justify-content-start">CUISINE:</span>
+          <span class="text-muted col-7 d-flex justify-content-start pl-3">{{restoDetails?.cuisines}}</span>
         </div>
         <hr>
         <div class="row no-gutters restodetails">
-          <span class="text-muted col-5  d-flex justify-content-start">COST FOR TWO:</span>
-          <span class="text-muted col-7  d-flex justify-content-start">{{restoDetails?.average_cost_for_two}}
+          <span class="text-muted col-5  d-flex justify-content-start ">COST FOR TWO:</span>
+          <span class="text-muted col-7  d-flex justify-content-start pl-3">{{restoDetails?.average_cost_for_two}}
             {{restoDetails?.currency}} - Cash and Cards accepted</span>
         </div>
         <hr>
         <div class="row no-gutters restodetails">
           <span class="text-muted col-5  d-flex justify-content-start">OPENING HOURS:</span>
-          <span class="text-muted col-7  d-flex justify-content-start">Today 11am – 11pm</span>
+          <span class="text-muted col-7  d-flex justify-content-start pl-3">Today 11am – 11pm</span>
         </div>
         <hr>
         <div class="row no-gutters restodetails">
           <span class="text-muted col-5  d-flex justify-content-start">PHONE:</span>
-          <span class="text-muted col-7  d-flex justify-content-start">9988776655</span>
+          <span class="text-muted col-7  d-flex justify-content-start pl-3">9988776655</span>
         </div>
         <hr>
 
         <div class="row no-gutters restodetails">
           <span class="text-muted col-5  d-flex justify-content-start">AVG-RATING:</span>
-          <span class="text-muted col-7  d-flex justify-content-start">{{restoDetails?.user_rating.rating_text}}</span>
+          <span class="text-muted col-7  d-flex justify-content-start pl-3">" {{restoDetails?.user_rating.rating_text}}
+            "</span>
         </div>
 
       </div>
@@ -55,14 +56,11 @@
             <li class="list-group-item">
               <button class="btn btn-danger">
                 <a [href]="[restoDetails?.menu_url]">View Menu</a>
-
               </button>
             </li>
             <li class="list-group-item">
               <button class="btn btn-success">
                 <a [href]="[restoDetails?.photos_url]">View Photos</a>
-
-
               </button>
             </li>
             <li class="list-group-item">
